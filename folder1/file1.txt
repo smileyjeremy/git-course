@@ -5,3 +5,8 @@ Nội dung này được thay đổi vào ngày 20:
 Nội dung này được thay đổi vào ngày 21
 Nội dung này được thay đổi vào ngày 22
 Nội dung này được thay đổi vào ngày 23
+------
+Nội dung thay đổi mới và cần commit:
+- Nội dung 4
+- Nội dung 5
+- Nội dung 6
