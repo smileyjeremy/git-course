@@ -1,0 +1,77 @@
+1. Giải thích các câu lệnh:
+- git commit --amend: mở giao diện trình soạn thảo ViM để chỉnh sửa lại nội dung của commit message gần nhất (bấm i để insert và :wq để write and quit)
+- git commit --amend -m"<message>": trực tiếp thay đổi nội dung của commit message, với nội dung mới bằng <message>
+- git restore --staged <file>: đưa các file đã được add vào vùng Staging quay trở lại vùng Working
+- git reset HEAD~1: revert commit, đưa 1 commit mới nhất đã được đẩy vào Repo quay trở lại vùng Working
+
+2. Các file có ở từng vùng làm việc sau khi thực hiện lệnh:
+a. Tạo 3 file: file1, file2, file3:
+- Chưa init project: chưa có vùng làm việc, chỉ có ở local directory
+
+b. Chạy lệnh: git init
+- Working directory: file1, file2, file3
+- Staging area:
+- Repository area:
+
+c. Chạy lệnh: git commit -m"init project"
+- Working directory: file1, file2, file3
+- Staging area:
+- Repository area:
+
+d. Chạy lệnh: git add file1
+- Working directory: file2, file3
+- Staging area: file1
+- Repository area:
+
+e. Chạy lệnh: git commit -m"add file"
+- Working directory: file2, file3
+- Staging area:
+- Repository area: file1
+
+f. Chạy lệnh: git add .
+- Working directory: 
+- Staging area: file2, file3
+- Repository area: file1
+
+g. Chạy lệnh: git restore --staged file2
+- Working directory: file2
+- Staging area: file3
+- Repository area: file1
+
+h. Chạy lệnh: git commit -m"add all files"
+- Working directory: file2
+- Staging area: 
+- Repository area: file1, file3
+
+i. Chạy lệnh: git reset HEAD~1
+- Working directory: file2, file3
+- Staging area: 
+- Repository area: file1
+
+3. Các file có ở từng vùng làm việc sau khi thực hiện lệnh:
+a. Chạy lệnh: git init
+- Working directory:
+- Staging area:
+- Repository area:
+
+b. Tạo file file1.txt, file2.txt, oops/file3.txt
+- Working directory: file1, file2, file3
+- Staging area:
+- Repository area:
+
+c. Thêm file .gitignore, thêm vào 2 dòng:
+file1.txt
+oops/
+- Working directory: file2
+- Staging area: 
+- Repository area:
+
+d. Chạy lệnh: git add .
+- Working directory: 
+- Staging area: file2
+- Repository area: 
+
+d. Chạy lệnh: git commit -m"init project"
+- Working directory: 
+- Staging area:
+- Repository area: file2
